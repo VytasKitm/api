@@ -41,8 +41,7 @@ let rootDiv = document.getElementById("root")
 
 // button.addEventListener("click",() => {
 //         fetch("https://coffee.alexflipnote.dev/random.json")
-//                 .then((response) => response.json())
-//                 .then((data) => img.setAttribute("src",data.file))
+//                .then((data) => img.setAttribute("src",data.file))
 // })
 
 
@@ -65,12 +64,12 @@ rootDiv.appendChild(infoCountry)
 rootDiv.appendChild(infoCapital)
 rootDiv.appendChild(flag)
 
+let data = []
 
-// const newInfo = async (name) => {
-//                 const res = await fetch(`https://restcountries.com/v3.1/name/${name}`)
-//                 const data = await res.json()
-//                 return data
-// }
+const newInfo = async (name) => {
+                const res = await fetch(`https://restcountries.com/v3.1/name/${name}`)
+                await res.json().then((promise) => data.push(...promise)) 
+}
 
 button.addEventListener("click", () => {
         let capitals
@@ -121,4 +120,61 @@ button.addEventListener("click", () => {
                                         rootDiv.appendChild(flag)
                                         }        
                         })
-})
+})              
+//  .then((response) => response.json())
+  
+
+
+
+
+// button.addEventListener("click", () => {
+//         data = []
+//         let capitals
+//         let infoCapital = document.querySelectorAll("h4")
+//         let infoCountry = document.querySelectorAll("h3")
+//         let flag = document.querySelectorAll("img")
+//         if (infoCapital) {
+//                 for(let i of infoCapital) {
+//                         i.remove()
+//                 }
+//         }
+//         if (infoCountry) {
+//                 for(let i of infoCountry) {
+//                         i.remove()
+//                 }
+//         }
+//         if (flag) {     
+//                 for(let i of flag) {
+//                         i.remove()
+//                 }
+//         }
+//         if (newInfo(input.value)) {
+//         console.log(data)
+//         for (let country of data) {
+//                 console.log(country)
+//                 let infoCountry = document.createElement("h3")
+//                 let infoCapital = document.createElement("h4")
+//                 let flag = document.createElement("img")
+//                 infoCountry.textContent = country.name.common
+//                 capitals = country.capital
+//                 if (capitals != null) {
+//                         for (let capital of capitals) {
+//                         infoCapital.textContent += capital + ". "
+//                         }
+//                 }
+//                 else {
+//                         infoCapital.textContent = "Informacijos apie sostine nera."
+//                 }
+                
+//                 if (country.flags.png.length > 0) {
+//                         flag.setAttribute("src",`${country.flags.png}`)
+//                 }
+//                 else {
+//                         console.log("Veliavos nera")
+//                 }
+//                 rootDiv.append(infoCountry)
+//                 rootDiv.append(infoCapital)
+//                 rootDiv.append(flag)          
+//         }  
+//         }             
+// })
