@@ -65,6 +65,5 @@ async function showMovie() {
 
 
 button.addEventListener("click", showMovie)
-// document.addEventListener('DOMContentLoaded', ())
 inputDiv.append(input, button, buttonPageLeft,buttonPageRight)
 rootDiv.append(inputDiv, mainDiv)

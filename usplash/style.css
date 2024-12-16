@@ -1,5 +1,7 @@
 #root {
         display: flex;
+        flex-direction: column;
+        align-content: center;
         justify-content: center;
         flex-wrap: wrap;
 }
@@ -14,6 +16,10 @@
         flex-wrap: wrap;
 }
 
+.inputDiv {
+        display: flex;
+        justify-content: center;
+}
 
 .imgDiv {
         height: 300px;
